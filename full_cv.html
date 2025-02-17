@@ -15,31 +15,31 @@
 </head>
 <body>
     <div id="wrapper">
-        <div id="main">
-            <div class="inner">
+            <div id="main">
+                <div class="inner">
                 <!-- Header -->
-                <header id="header">
-                    <h1>Yuna Baek</h1>
-                    <p>Master of Public Policy<br>Specialization in Data Analytics & Education Policy</p>
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/yuna-baek-3ab858a5/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/yunabaek122" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto:ybaek@uchicago.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-                </header>
-				<section>
-                <!-- Education Section -->
-                    <header class="main">
-                        <h2>Education</h2>
+                    <header id="header">
+                        <h1>Yuna Baek</h1>
+                        <p>Master of Public Policy<br>Specialization in Data Analytics & Education Policy</p>
+					    <ul class="icons">
+						    <li><a href="https://www.linkedin.com/in/yuna-baek-3ab858a5/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						    <li><a href="https://github.com/yunabaek122" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						    <li><a href="mailto:ybaek@uchicago.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					    </ul>
                     </header>
-                    <div class="education">
-                        <p><strong>Harris School of Public Policy, University of Chicago</strong><br>
-                        Master of Public Policy (Specialization in Data Analytics and Education Policy), Expected May 2025</p>
+				    <section>
+                <!-- Education Section -->
+                        <header class="main">
+                            <h2>Education</h2>
+                        </header>
+                        <div class="education">
+                            <p><strong>Harris School of Public Policy, University of Chicago</strong><br>
+                            Master of Public Policy (Specialization in Data Analytics and Education Policy), Expected May 2025</p>
+                                
+                            <p><strong>Yonsei University</strong><br>
+                            Bachelor of Arts in Economics (Development Economics), August 2022</p>
                         
-                        <p><strong>Yonsei University</strong><br>
-                        Bachelor of Arts in Economics (Development Economics), August 2022</p>
-                        
-                        <p><strong>University of California, San Diego</strong><br>
+                            <p><strong>University of California, San Diego</strong><br>
                         Education Abroad Program (UCEAP), Major: Economics, June 2018</p>
                     </div>
                 </section>
@@ -136,10 +136,81 @@
                 </section>
             </div>
         </div>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Homepage</a></li>
+                        <li>
+                            <span class="opener">Data Portfolio</span>
+                            <ul>
+                                <li><a href="index.html#data_portfolio">AIR</a></li>
+                                <li><a href="index.html#data_portfolio">Harris Policy Labs</a></li>
+                                <li><a href="index.html#data_portfolio">Python</a></li>
+                                <li><a href="index.html#data_portfolio">Machine Learning</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="full_cv.html#professional_experience">Professional Experience</a></li>
+                    </ul>
+                </nav>
+        
+                <!-- Section: Contact -->
+                <section id="contact">
+                    <header class="major">
+                        <h2>Connect</h2>
+                    </header>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope"><a href="mailto:ybaek@uchicago.edu">ybaek@uchicago.edu</a></li>
+                        <li class="icon solid fa-envelope"><a href="mailto:yunabaek12@gmail.com">yunabaek12@gmail.com</a></li>
+                        <li class="icon solid fa-phone">+1 (773) 373-5886</li>
+                        <li class="icon solid fa-location-dot">Chicago, IL</li>
+                    </ul>
+                </section>
+        
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Yuna Baek 2025. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                </footer>
+            </div>
+        </div>
     </div>
     
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"], a[href^="index.html#"], a[href^="full_cv.html#"]').forEach(anchor => {
+                anchor.addEventListener("click", function(e) {
+                    const targetId = this.getAttribute("href").split("#")[1];
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: "smooth" });
+                        history.pushState(null, null, "#" + targetId);
+                    }
+                });
+            });
+        
+            // Sidebar toggle fix (ensures menu dropdowns work)
+            document.querySelectorAll(".opener").forEach(function(opener) {
+                opener.addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    let submenu = this.nextElementSibling;
+                    if (submenu) {
+                        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+                    }
+                });
+            });
+        });
+        </script>
+        
+
+    </body>
 </html>
